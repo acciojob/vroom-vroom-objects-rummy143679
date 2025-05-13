@@ -14,7 +14,7 @@ function SportsCar(make, model, topSpeed) {
 }
 
 SportsCar.prototype = Object.create(Car.prototype); //Method inheritance
-// SportsCar.prototype.Constructr = SportsCar;
+SportsCar.prototype.Constructr = SportsCar;
 SportsCar.prototype.getTopSpeed = () => {
 	return this.topSpeed;
 }
