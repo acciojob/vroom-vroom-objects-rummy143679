@@ -2,19 +2,22 @@
 function Car(make, model) {
 	this.make = make;
 	this.model = model;
-	this.getMakeModel = () => {
-		return `${this.name} ${this.model}`;
-	}
+}
+
+Car.prototype.getMakeModel = () => {
+	returun `${this.make} ${this.model}`;
 }
 
 function SportsCar(make, model, topSpeed) {
-	super(name, model);
 	this.topSpeed = topSpeed;
-	this.getTopSpeed = () => {
-		return this.topSpeed;
-	}
+	Car.call(this, make, model) //propety inheritance
 }
 
+SportsCar.prototype = Object.create(Car.prototype); //Method inheritance
+// SportsCar.prototype.Constructr = SportsCar;
+SportsCar.prototype.getTopSpeed = () => {
+	return this.topSpeed;
+}
 // Do not change the code below
 window.Car = Car;
 window.SportsCar = SportsCar;
