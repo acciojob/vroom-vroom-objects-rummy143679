@@ -9,12 +9,13 @@ Car.prototype.getMakeModel = () => {
 }
 
 function SportsCar(make, model, topSpeed) {
+	Car.call(this, make, model) //call cars contructor to set the value
 	this.topSpeed = topSpeed;
-	Car.call(this, make, model) //propety inheritance
 }
 
 SportsCar.prototype = Object.create(Car.prototype); //Method inheritance
 SportsCar.prototype.Constructr = SportsCar;
+
 SportsCar.prototype.getTopSpeed = () => {
 	return this.topSpeed;
 }
