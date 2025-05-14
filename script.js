@@ -4,8 +4,8 @@ function Car(make, model) {
 	this.model = model;
 }
 
-Car.prototype.getMakeModel = () => {
-	returun `${this.make} ${this.model}`;
+Car.prototype.getMakeModel = function (){
+	return `${this.make} ${this.model}`;
 }
 
 function SportsCar(make, model, topSpeed) {
@@ -16,7 +16,7 @@ function SportsCar(make, model, topSpeed) {
 SportsCar.prototype = Object.create(Car.prototype); //Method inheritance
 SportsCar.prototype.Constructr = SportsCar;
 
-SportsCar.prototype.getTopSpeed = () => {
+SportsCar.prototype.getTopSpeed = function(){
 	return this.topSpeed;
 }
 // Do not change the code below
